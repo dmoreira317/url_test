@@ -36,10 +36,10 @@ This Django project provides a simple API endpoint to measure the response time 
 ### Example
     To measure the response time for a domain, make a GET request to the following URL:
 
-    http://localhost:8000/measure/measure_response/?dominio=www.example.com
+    http://localhost:8000/api/measure/measure_response/?dominio=www.example.com
     To measure the response time for an IP address, include the ip parameter:
 
-    http://localhost:8000/measure/measure_response/?dominio=www.example.com&ip=203.0.113.0
+    http://localhost:8000/api/measure/measure_response/?dominio=www.example.com&ip=203.0.113.0
     The response will be a JSON object containing the measured response time (in milliseconds) and the status code:
 
     {

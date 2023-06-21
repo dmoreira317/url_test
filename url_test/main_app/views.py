@@ -13,9 +13,10 @@ class MeasureResponseViewSet(viewsets.ViewSet):
         """
         Measure the response time and status code of a specified domain or IP.
         Valid syntax: http://your_domain/api/measure/?dominio=www.transparentcdn.com
+        or http://your_domain/api/measure/?ip=8.8.8.8
 
         Parameters:
-        - dominio (str): The domain to measure the response time for.
+        - dominio (str, optional): The domain to measure the response time for.
         - ip (str, optional): The IP address to make the request to instead of resolving the domain.
 
         Returns:
@@ -31,9 +32,9 @@ class MeasureResponseViewSet(viewsets.ViewSet):
             domain = request.GET.get('dominio')
             ip = request.GET.get('ip')
 
-            url = f"http://{ip}/{domain}" if ip else f"http://{domain}/"
+            url = f"https://{ip}/" if ip else f"http://{domain}/"
 
-            if not domain:
+            if not domain and not ip:
                 raise ValueError("url not valid or empty.")
 
             start_time = timer()
