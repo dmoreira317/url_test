@@ -18,6 +18,7 @@ This Django project provides a simple API endpoint to measure the response time 
 3. Start the Django development server:
 
 ```shell
+    cd url_test
     python manage.py runserver
 ```
 4. The server will start running at http://localhost:8000/.
